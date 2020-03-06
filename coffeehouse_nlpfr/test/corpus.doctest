@@ -306,7 +306,7 @@ Reading the Penn Treebank (Wall Street Journal sample):
 
 If you have access to a full installation of the Penn Treebank, NLTK
 can be configured to load it as well. Download the ``ptb`` package,
-and in the directory ``nltk_data/corpora/ptb`` place the ``BROWN``
+and in the directory ``coffeehouse_nlpfr_data/corpora/ptb`` place the ``BROWN``
 and ``WSJ`` directories of the Treebank installation (symlinks work
 as well). Then use the ``ptb`` module instead of ``treebank``:
 
@@ -1252,7 +1252,7 @@ path to the root directory is stored in the ``root`` property:
 
     >>> import os
     >>> str(nltk.corpus.genesis.root).replace(os.path.sep,'/') # doctest: +ELLIPSIS
-    '.../nltk_data/corpora/genesis'
+    '.../coffeehouse_nlpfr_data/corpora/genesis'
 
 Each file within the corpus is identified by a platform-independent
 identifier, which is basically a path string that uses ``/`` as the
@@ -1685,19 +1685,19 @@ Test the plaintext corpora that come with nltk:
     ...     print(str(corpus).replace('\\\\','/'))
     ...     print('  ', repr(corpus.fileids())[:60])
     ...     print('  ', repr(corpus.words()[:10])[:60])
-    <PlaintextCorpusReader in '.../nltk_data/corpora/ab...'>
+    <PlaintextCorpusReader in '.../coffeehouse_nlpfr_data/corpora/ab...'>
        ['rural.txt', 'science.txt']
        ['PM', 'denies', 'knowledge', 'of', 'AWB', ...
-    <PlaintextCorpusReader in '.../nltk_data/corpora/genesi...'>
+    <PlaintextCorpusReader in '.../coffeehouse_nlpfr_data/corpora/genesi...'>
        ['english-kjv.txt', 'english-web.txt', 'finnish.txt', ...
        ['In', 'the', 'beginning', 'God', 'created', 'the', ...
-    <PlaintextCorpusReader in '.../nltk_data/corpora/inaugura...'>
+    <PlaintextCorpusReader in '.../coffeehouse_nlpfr_data/corpora/inaugura...'>
        ['1789-Washington.txt', '1793-Washington.txt', ...
        ['Fellow', '-', 'Citizens', 'of', 'the', 'Senate', ...
-    <PlaintextCorpusReader in '.../nltk_data/corpora/state_unio...'>
+    <PlaintextCorpusReader in '.../coffeehouse_nlpfr_data/corpora/state_unio...'>
        ['1945-Truman.txt', '1946-Truman.txt', ...
        ['PRESIDENT', 'HARRY', 'S', '.', 'TRUMAN', "'", ...
-    <PlaintextCorpusReader in '.../nltk_data/corpora/webtex...'>
+    <PlaintextCorpusReader in '.../coffeehouse_nlpfr_data/corpora/webtex...'>
        ['firefox.txt', 'grail.txt', 'overheard.txt', ...
        ['Cookie', 'Manager', ':', '"', 'Don', "'", 't', ...
 

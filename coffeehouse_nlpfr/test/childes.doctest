@@ -8,7 +8,7 @@ How to use CHILDESCorpusReader
 ==============================
 
 Read the CHILDESCorpusReader class and read the CHILDES corpus saved in
-the nltk_data directory.
+the coffeehouse_nlpfr_data directory.
 
     >>> import nltk
     >>> from nltk.corpus.reader import CHILDESCorpusReader

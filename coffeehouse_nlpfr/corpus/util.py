@@ -41,8 +41,8 @@ class LazyCorpusLoader(object):
     :type name: str
     :param reader_cls: The specific CorpusReader class, e.g. PlaintextCorpusReader, WordListCorpusReader
     :type reader: coffeehouse_nlpfr.corpus.reader.api.CorpusReader
-    :param nltk_data_subdir: The subdirectory where the corpus is stored.
-    :type nltk_data_subdir: str
+    :param coffeehouse_nlpfr_data_subdir: The subdirectory where the corpus is stored.
+    :type coffeehouse_nlpfr_data_subdir: str
     :param *args: Any other non-keywords arguments that `reader_cls` might need.
     :param *kargs: Any other keywords arguments that `reader_cls` might need.
     """
@@ -53,13 +53,13 @@ class LazyCorpusLoader(object):
         assert issubclass(reader_cls, CorpusReader)
         self.__name = self.__name__ = name
         self.__reader_cls = reader_cls
-        # If nltk_data_subdir is set explicitly
-        if "nltk_data_subdir" in kwargs:
+        # If coffeehouse_nlpfr_data_subdir is set explicitly
+        if "coffeehouse_nlpfr_data_subdir" in kwargs:
             # Use the specified subdirectory path
-            self.subdir = kwargs["nltk_data_subdir"]
-            # Pops the `nltk_data_subdir` argument, we don't need it anymore.
-            kwargs.pop("nltk_data_subdir", None)
-        else:  # Otherwise use 'nltk_data/corpora'
+            self.subdir = kwargs["coffeehouse_nlpfr_data_subdir"]
+            # Pops the `coffeehouse_nlpfr_data_subdir` argument, we don't need it anymore.
+            kwargs.pop("coffeehouse_nlpfr_data_subdir", None)
+        else:  # Otherwise use 'coffeehouse_nlpfr_data/corpora'
             self.subdir = "corpora"
         self.__args = args
         self.__kwargs = kwargs

@@ -45,15 +45,15 @@ class NKJPCorpusReader(XMLCorpusReader):
         import coffeehouse_nlpfr
         import nkjp
         from nkjp import NKJPCorpusReader
-        x = NKJPCorpusReader(root='/home/USER/nltk_data/corpora/nkjp/', fileids='') # obtain the whole corpus
+        x = NKJPCorpusReader(root='/home/USER/coffeehouse_nlpfr_data/corpora/nkjp/', fileids='') # obtain the whole corpus
         x.header()
         x.raw()
         x.words()
         x.tagged_words(tags=['subst', 'comp'])  #Link to find more tags: nkjp.pl/poliqarp/help/ense2.html
         x.sents()
-        x = NKJPCorpusReader(root='/home/USER/nltk_data/corpora/nkjp/', fileids='Wilk*') # obtain particular file(s)
-        x.header(fileids=['WilkDom', '/home/USER/nltk_data/corpora/nkjp/WilkWilczy'])
-        x.tagged_words(fileids=['WilkDom', '/home/USER/nltk_data/corpora/nkjp/WilkWilczy'], tags=['subst', 'comp'])
+        x = NKJPCorpusReader(root='/home/USER/coffeehouse_nlpfr_data/corpora/nkjp/', fileids='Wilk*') # obtain particular file(s)
+        x.header(fileids=['WilkDom', '/home/USER/coffeehouse_nlpfr_data/corpora/nkjp/WilkWilczy'])
+        x.tagged_words(fileids=['WilkDom', '/home/USER/coffeehouse_nlpfr_data/corpora/nkjp/WilkWilczy'], tags=['subst', 'comp'])
         """
         if isinstance(fileids, string_types):
             XMLCorpusReader.__init__(self, root, fileids + ".*/header.xml")

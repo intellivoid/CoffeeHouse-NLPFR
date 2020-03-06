@@ -84,13 +84,13 @@ path = []
    These directories will be checked in order when looking for a
    resource in the data package.  Note that this allows users to
    substitute in their own versions of resources, if they have them
-   (e.g., in their home directory under ~/nltk_data)."""
+   (e.g., in their home directory under ~/coffeehouse_nlpfr_data)."""
 
 # User-specified locations:
-_paths_from_env = os.environ.get("NLTK_DATA", str("")).split(os.pathsep)
+_paths_from_env = os.environ.get("COFFEEHOUSE_NLPFR_DATA", str("")).split(os.pathsep)
 path += [d for d in _paths_from_env if d]
 if "APPENGINE_RUNTIME" not in os.environ and os.path.expanduser("~/") != "~/":
-    path.append(os.path.expanduser(str("~/nltk_data")))
+    path.append(os.path.expanduser(str("~/coffeehouse_nlpfr_data")))
 
 try:
     import coffeehousemod_tokenizer
@@ -105,24 +105,24 @@ except ImportError: pass
 if sys.platform.startswith("win"):
     # Common locations on Windows:
     path += [
-        os.path.join(sys.prefix, str("nltk_data")),
-        os.path.join(sys.prefix, str("share"), str("nltk_data")),
-        os.path.join(sys.prefix, str("lib"), str("nltk_data")),
-        os.path.join(os.environ.get(str("APPDATA"), str("C:\\")), str("nltk_data")),
-        str(r"C:\nltk_data"),
-        str(r"D:\nltk_data"),
-        str(r"E:\nltk_data"),
+        os.path.join(sys.prefix, str("coffeehouse_nlpfr_data")),
+        os.path.join(sys.prefix, str("share"), str("coffeehouse_nlpfr_data")),
+        os.path.join(sys.prefix, str("lib"), str("coffeehouse_nlpfr_data")),
+        os.path.join(os.environ.get(str("APPDATA"), str("C:\\")), str("coffeehouse_nlpfr_data")),
+        str(r"C:\coffeehouse_nlpfr_data"),
+        str(r"D:\coffeehouse_nlpfr_data"),
+        str(r"E:\coffeehouse_nlpfr_data"),
     ]
 else:
     # Common locations on UNIX & OS X:
     path += [
-        os.path.join(sys.prefix, str("nltk_data")),
-        os.path.join(sys.prefix, str("share"), str("nltk_data")),
-        os.path.join(sys.prefix, str("lib"), str("nltk_data")),
-        str("/usr/share/nltk_data"),
-        str("/usr/local/share/nltk_data"),
-        str("/usr/lib/nltk_data"),
-        str("/usr/local/lib/nltk_data"),
+        os.path.join(sys.prefix, str("coffeehouse_nlpfr_data")),
+        os.path.join(sys.prefix, str("share"), str("coffeehouse_nlpfr_data")),
+        os.path.join(sys.prefix, str("lib"), str("coffeehouse_nlpfr_data")),
+        str("/usr/share/coffeehouse_nlpfr_data"),
+        str("/usr/local/share/coffeehouse_nlpfr_data"),
+        str("/usr/lib/coffeehouse_nlpfr_data"),
+        str("/usr/local/lib/coffeehouse_nlpfr_data"),
     ]
 
 

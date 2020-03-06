@@ -31,7 +31,7 @@ class CHILDESCorpusReader(XMLCorpusReader):
     The CHILDES corpus is available at ``https://childes.talkbank.org/``. The XML
     version of CHILDES is located at ``https://childes.talkbank.org/data-xml/``.
     Copy the needed parts of the CHILDES XML corpus into the NLTK data directory
-    (``nltk_data/corpora/CHILDES/``).
+    (``coffeehouse_nlpfr_data/corpora/CHILDES/``).
 
     For access to the file text use the usual coffeehouse_nlpfr functions,
     ``words()``, ``sents()``, ``tagged_words()`` and ``tagged_sents()``.
@@ -524,8 +524,8 @@ class CHILDESCorpusReader(XMLCorpusReader):
         If no urlbase is passed, we try to calculate it.  This
         requires that the childes corpus was set up to mirror the
         folder hierarchy under childes.psy.cmu.edu/data-xml/, e.g.:
-        nltk_data/corpora/childes/Eng-USA/Cornell/??? or
-        nltk_data/corpora/childes/Romance/Spanish/Aguirre/???
+        coffeehouse_nlpfr_data/corpora/childes/Eng-USA/Cornell/??? or
+        coffeehouse_nlpfr_data/corpora/childes/Romance/Spanish/Aguirre/???
 
         The function first looks (as a special case) if "Eng-USA" is
         on the path consisting of <corpus root>+fileid; then if

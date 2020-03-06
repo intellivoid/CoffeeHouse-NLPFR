@@ -805,7 +805,7 @@ Data
 * Cleaned up Gutenberg text corpora
 * added Moby Dick; removed redundant copy of Blake songs.
 * more tagger models
-* renamed to nltk_data to facilitate installation
+* renamed to coffeehouse_nlpfr_data to facilitate installation
 * stored each corpus as a zip file for quicker installation
   and access, and to solve a problem with the Propbank
   corpus including a file with an illegal name for MSWindows
@@ -818,7 +818,7 @@ Book:
 Distributions:
 * fixed problem with mac installer that arose when Python binary
   couldn't be found
-* removed dependency of NLTK on nltk_data so that NLTK code can be
+* removed dependency of NLTK on coffeehouse_nlpfr_data so that NLTK code can be
   installed before the data
 
 Version 0.9.4 2008-08-01

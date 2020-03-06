@@ -417,12 +417,12 @@ perluniprops = LazyCorpusLoader(
     "perluniprops",
     UnicharsCorpusReader,
     r"(?!README|\.).*",
-    nltk_data_subdir="misc",
+    coffeehouse_nlpfr_data_subdir="misc",
     encoding="utf8",
 )
 
 # mwa_ppdb = LazyCorpusLoader(
-#     'mwa_ppdb', MWAPPDBCorpusReader, r'(?!README|\.).*', nltk_data_subdir='misc', encoding='utf8')
+#     'mwa_ppdb', MWAPPDBCorpusReader, r'(?!README|\.).*', coffeehouse_nlpfr_data_subdir='misc', encoding='utf8')
 
 # See https://github.com/nltk/nltk/issues/1579
 # and https://github.com/nltk/nltk/issues/1716

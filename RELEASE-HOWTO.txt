@@ -9,13 +9,13 @@ Building an NLTK distribution
    - Optionally test individual modules:
      tox-3.7 -e py37 nltk.package.module
    - Check the data index is up-to-date:
-     cd ../nltk_data; make; push
+     cd ../coffeehouse_nlpfr_data; make; push
 
 2. Update Version Number and ChangeLog
    - Update version number
      edit nltk/VERSION and web/conf.py (version and release)
    - Add a new entry to the news page in nltk/web/news.rst
-   - Update the ChangeLog (for nltk, nltk_data)
+   - Update the ChangeLog (for nltk, coffeehouse_nlpfr_data)
      git log --since=20XX-YY-ZZ
      edit ChangeLog
 

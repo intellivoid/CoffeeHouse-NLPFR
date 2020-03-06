@@ -22,8 +22,8 @@ function with a single argument, giving the package identifier for the
 package that should be downloaded:
 
     >>> download('treebank') # doctest: +SKIP
-    [nltk_data] Downloading package 'treebank'...
-    [nltk_data]   Unzipping corpora/treebank.zip.
+    [coffeehouse_nlpfr_data] Downloading package 'treebank'...
+    [coffeehouse_nlpfr_data]   Unzipping corpora/treebank.zip.
 
 NLTK also provides a number of \"package collections\", consisting of
 a group of related packages.  To download all packages in a
@@ -31,13 +31,13 @@ colleciton, simply call ``download()`` with the collection's
 identifier:
 
     >>> download('all-corpora') # doctest: +SKIP
-    [nltk_data] Downloading package 'abc'...
-    [nltk_data]   Unzipping corpora/abc.zip.
-    [nltk_data] Downloading package 'alpino'...
-    [nltk_data]   Unzipping corpora/alpino.zip.
+    [coffeehouse_nlpfr_data] Downloading package 'abc'...
+    [coffeehouse_nlpfr_data]   Unzipping corpora/abc.zip.
+    [coffeehouse_nlpfr_data] Downloading package 'alpino'...
+    [coffeehouse_nlpfr_data]   Unzipping corpora/alpino.zip.
       ...
-    [nltk_data] Downloading package 'words'...
-    [nltk_data]   Unzipping corpora/words.zip.
+    [coffeehouse_nlpfr_data] Downloading package 'words'...
+    [coffeehouse_nlpfr_data]   Unzipping corpora/words.zip.
 
 Download Directory
 ==================
@@ -750,7 +750,7 @@ class Downloader(object):
         download_dir=None,
         quiet=False,
         force=False,
-        prefix="[nltk_data] ",
+        prefix="[coffeehouse_nlpfr_data] ",
         halt_on_error=True,
         raise_on_error=False,
         print_error_to=sys.stderr,
@@ -923,7 +923,7 @@ class Downloader(object):
         # Otherwise, everything looks good.
         return self.INSTALLED
 
-    def update(self, quiet=False, prefix="[nltk_data] "):
+    def update(self, quiet=False, prefix="[coffeehouse_nlpfr_data] "):
         """
         Re-download any packages whose status is STALE.
         """
@@ -1063,8 +1063,8 @@ class Downloader(object):
 
         On all other platforms, the default directory is the first of
         the following which exists or which can be created with write
-        permission: ``/usr/share/nltk_data``, ``/usr/local/share/nltk_data``,
-        ``/usr/lib/nltk_data``, ``/usr/local/lib/nltk_data``, ``~/nltk_data``.
+        permission: ``/usr/share/coffeehouse_nlpfr_data``, ``/usr/local/share/coffeehouse_nlpfr_data``,
+        ``/usr/lib/coffeehouse_nlpfr_data``, ``/usr/local/lib/coffeehouse_nlpfr_data``, ``~/coffeehouse_nlpfr_data``.
         """
         # Check if we are on GAE where we cannot write into filesystem.
         if "APPENGINE_RUNTIME" in os.environ:
@@ -1086,8 +1086,8 @@ class Downloader(object):
             if homedir == "~/":
                 raise ValueError("Could not find a default download directory")
 
-        # append "nltk_data" to the home directory
-        return os.path.join(homedir, "nltk_data")
+        # append "coffeehouse_nlpfr_data" to the home directory
+        return os.path.join(homedir, "coffeehouse_nlpfr_data")
 
     def _get_download_dir(self):
         """
@@ -2323,7 +2323,7 @@ def build_index(root, base_url):
         uids.add(item.get("id"))
 
     # Put it all together
-    top_elt = ElementTree.Element("nltk_data")
+    top_elt = ElementTree.Element("coffeehouse_nlpfr_data")
     top_elt.append(ElementTree.Element("packages"))
     for package in packages:
         top_elt[0].append(package)
