@@ -2,7 +2,7 @@ from __future__ import print_function
 
 import re
 import sys
-import coffeehouse_nlpfr
+import nltk
 import epydoc.docbuilder
 import epydoc.cli
 from epydoc import log
@@ -18,7 +18,7 @@ log.register_logger(logger)
 
 
 def find_all_names(stoplist):
-    ROOT = ['coffeehouse_nlpfr']
+    ROOT = ['nltk']
     logger._verbosity = 0
     docindex = epydoc.docbuilder.build_doc_index(ROOT, add_submodules=True)
     valdocs = sorted(
@@ -30,11 +30,11 @@ def find_all_names(stoplist):
         )
     )
     logger._verbosity = 5
-    names = coffeehouse_nlpfr.defaultdict(list)
+    names = nltk.defaultdict(list)
     n = 0
     for valdoc in valdocs:
         name = valdoc.canonical_name
-        if name is not epydoc.apidoc.UNKNOWN and name is not None and name[0] == 'coffeehouse_nlpfr':
+        if name is not epydoc.apidoc.UNKNOWN and name is not None and name[0] == 'nltk':
             n += 1
             for i in range(len(name)):
                 key = str(name[i:])
@@ -57,11 +57,11 @@ TOKEN_RE = re.compile('[\w\.]+')
 
 LINE_RE = re.compile('.*')
 
-INDEXTERM = '<indexterm type="coffeehouse_nlpfr"><primary>%s</primary></indexterm>'
+INDEXTERM = '<indexterm type="nltk"><primary>%s</primary></indexterm>'
 
 
 def scan_xml(filenames, names):
-    fdist = coffeehouse_nlpfr.FreqDist()
+    fdist = nltk.FreqDist()
 
     def linesub(match):
         line = match.group()

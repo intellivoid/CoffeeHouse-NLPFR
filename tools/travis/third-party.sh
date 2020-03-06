@@ -7,7 +7,7 @@ pushd ${HOME}
 [[ ! -d 'third' ]] && mkdir 'third'
 pushd 'third'
 
-# Download coffeehouse_nlpfr stanford dependencies
+# Download nltk stanford dependencies
 #stanford_corenlp_package_zip_name=$(curl -s 'https://stanfordnlp.github.io/CoreNLP/' | grep -o 'stanford-corenlp-full-.*\.zip' | head -n1)
 stanford_corenlp_package_zip_name="stanford-corenlp-full-2017-06-09.zip"
 [[ ${stanford_corenlp_package_zip_name} =~ (.+)\.zip ]]

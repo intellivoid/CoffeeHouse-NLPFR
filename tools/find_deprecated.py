@@ -28,10 +28,10 @@ import re
 import sys
 import tokenize
 import textwrap
-import coffeehouse_nlpfr.corpus
+import nltk.corpus
 from doctest import DocTestParser, register_optionflag
 from cStringIO import StringIO
-from coffeehouse_nlpfr import defaultdict
+from nltk import defaultdict
 
 ######################################################################
 # Regexps
@@ -61,7 +61,7 @@ DEPRECATED_DEF_PAT = (
 DEPRECATED_DEF_RE = re.compile(DEPRECATED_DEF_PAT, re.MULTILINE)
 
 CORPUS_READ_METHOD_RE = re.compile(
-    '({})\.read\('.format('|'.join(re.escape(n) for n in dir(coffeehouse_nlpfr.corpus)))
+    '({})\.read\('.format('|'.join(re.escape(n) for n in dir(nltk.corpus)))
 )
 
 CLASS_DEF_RE = re.compile('^\s*class\s+(\w+)\s*[:\(]')
@@ -230,15 +230,15 @@ def print_deprecated_uses_in(readline, path, dep_files, dep_names, lineno_offset
 def main():
     paths = sys.argv[1:] or ['.']
 
-    print('Importing coffeehouse_nlpfr...')
+    print('Importing nltk...')
     try:
-        import coffeehouse_nlpfr
+        import nltk
     except ImportError:
-        print('Unable to import coffeehouse_nlpfr -- check your PYTHONPATH.')
+        print('Unable to import nltk -- check your PYTHONPATH.')
         sys.exit(-1)
 
-    print('Finding definitions of deprecated funtions & classes in coffeehouse_nlpfr...')
-    find_deprecated_defs(coffeehouse_nlpfr.__path__[0])
+    print('Finding definitions of deprecated funtions & classes in nltk...')
+    find_deprecated_defs(nltk.__path__[0])
 
     print('Looking for possible uses of deprecated funcs & classes...')
     dep_names = print_deprecated_uses(paths)

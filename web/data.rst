@@ -14,34 +14,12 @@ Interactive installer
 
 Run the Python interpreter and type the commands:
 
-    >>> import coffeehouse_nlpfr
-    >>> nltk.download()
-
-A new window should open, showing the NLTK Downloader.  Click on the File menu and select Change Download Directory.  For central installation, set this to
-
-    >>> import coffeehouse_nlpfr
-    >>> nltk.download()
-
-A new window should open, showing the NLTK Downloader.  Click on the File menu and select Change Download Directory.  For central installation, set this to
-
     >>> import nltk
     >>> nltk.download()
 
-A new window should open, showing the NLTK Downloader.  Click on the File menu and select Change Download Directory.  For central installation, set this to ``C:\coffeehouse_nlpfr_data`` (Windows), ``/usr/local/share/coffeehouse_nlpfr_data`` (Mac), or ``/usr/share/coffeehouse_nlpfr_data`` (Unix).  Next, select the packages or collections you want to download.
+A new window should open, showing the NLTK Downloader.  Click on the File menu and select Change Download Directory.  For central installation, set this to ``C:\nltk_data`` (Windows), ``/usr/local/share/nltk_data`` (Mac), or ``/usr/share/nltk_data`` (Unix).  Next, select the packages or collections you want to download.
 
-If you did not install the data to one of the above central locations, you will need to set the ``COFFEEHOUSE_NLPFR_DATA`` environment variable to specify the location of the data.  (On a Windows machine, right click on "My Computer" then select ``Properties > Advanced > Environment Variables > User Variables > New...``)
-
-Test that the data has been installed as follows.  (This assumes you downloaded the Brown Corpus):
-
-    >>> from coffeehouse_nlpfr.corpus import brown
-    >>> brown.words()
-    ['The', 'Fulton', 'County', 'Grand', 'Jury', 'said', ...]
-
-Test that the data has been installed as follows.  (This assumes you downloaded the Brown Corpus):
-
-    >>> from coffeehouse_nlpfr.corpus import brown
-    >>> brown.words()
-    ['The', 'Fulton', 'County', 'Grand', 'Jury', 'said', ...]
+If you did not install the data to one of the above central locations, you will need to set the ``NLTK_DATA`` environment variable to specify the location of the data.  (On a Windows machine, right click on "My Computer" then select ``Properties > Advanced > Environment Variables > User Variables > New...``)
 
 Test that the data has been installed as follows.  (This assumes you downloaded the Brown Corpus):
 
@@ -60,9 +38,9 @@ If your web connection uses a proxy server, you should specify the proxy address
 Command line installation
 -------------------------
 
-The downloader will search for an existing ``coffeehouse_nlpfr_data`` directory to install NLTK data.  If one does not exist it will attempt to create one in a central location (when using an administrator account) or otherwise in the user's filespace.  If necessary, run the download command from an administrator account, or using sudo.  The recommended system location is ``C:\coffeehouse_nlpfr_data`` (Windows); ``/usr/local/share/coffeehouse_nlpfr_data`` (Mac); and ``/usr/share/coffeehouse_nlpfr_data`` (Unix).  You can use the ``-d`` flag to specify a different location (but if you do this, be sure to set the ``COFFEEHOUSE_NLPFR_DATA`` environment variable accordingly).
+The downloader will search for an existing ``nltk_data`` directory to install NLTK data.  If one does not exist it will attempt to create one in a central location (when using an administrator account) or otherwise in the user's filespace.  If necessary, run the download command from an administrator account, or using sudo.  The recommended system location is ``C:\nltk_data`` (Windows); ``/usr/local/share/nltk_data`` (Mac); and ``/usr/share/nltk_data`` (Unix).  You can use the ``-d`` flag to specify a different location (but if you do this, be sure to set the ``NLTK_DATA`` environment variable accordingly).
 
-Run the command ``python -m nltk.downloader all``.  To ensure central installation, run the command ``sudo python -m nltk.downloader -d /usr/local/share/coffeehouse_nlpfr_data all``.
+Run the command ``python -m nltk.downloader all``.  To ensure central installation, run the command ``sudo python -m nltk.downloader -d /usr/local/share/nltk_data all``.
 
 Windows: Use the "Run..." option on the Start menu.  Windows Vista users need to first turn on this option, using ``Start -> Properties -> Customize`` to check the box to activate the "Run..." option. 
 
@@ -72,16 +50,16 @@ starting the Python interpreter, and accessing the Brown Corpus (see the previou
 Manual installation
 -------------------
 
-Create a folder ``coffeehouse_nlpfr_data``, e.g. ``C:\coffeehouse_nlpfr_data``, or ``/usr/local/share/coffeehouse_nlpfr_data``,
+Create a folder ``nltk_data``, e.g. ``C:\nltk_data``, or ``/usr/local/share/nltk_data``,
 and subfolders ``chunkers``, ``grammars``, ``misc``, ``sentiment``, ``taggers``, ``corpora``,
 ``help``, ``models``, ``stemmers``, ``tokenizers``.
 
 Download individual packages from ``http://nltk.org/nltk_data/`` (see the "download" links).
 Unzip them to the appropriate subfolder. For example, the Brown Corpus, found at:
 ``https://raw.githubusercontent.com/nltk/nltk_data/gh-pages/packages/corpora/brown.zip``
-is to be unzipped to ``coffeehouse_nlpfr_data/corpora/brown``.
+is to be unzipped to ``nltk_data/corpora/brown``.
 
-Set your ``COFFEEHOUSE_NLPFR_DATA`` environment variable to point to your top level ``coffeehouse_nlpfr_data`` folder.
+Set your ``NLTK_DATA`` environment variable to point to your top level ``nltk_data`` folder.
 
 
 

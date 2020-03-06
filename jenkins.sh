@@ -2,12 +2,12 @@
 
 cd `dirname $0`
 
-#download coffeehouse_nlpfr python dependencies
+#download nltk python dependencies
 pip install --upgrade -r pip-req.txt
 pip install --upgrade matplotlib
 pip install --upgrade https://github.com/PyCQA/pylint/archive/master.zip
 
-#download coffeehouse_nlpfr data packages
+#download nltk data packages
 python -c "import nltk; nltk.download('all')" || echo "NLTK data download failed: $?"
 
 #download external dependencies
@@ -15,7 +15,7 @@ pushd ${HOME}
 [[ ! -d 'third' ]] && mkdir 'third'
 pushd 'third'
 
-# Download coffeehouse_nlpfr stanford dependencies
+# Download nltk stanford dependencies
 #stanford_corenlp_package_zip_name=$(curl -s 'https://stanfordnlp.github.io/CoreNLP/' | grep -o 'stanford-corenlp-full-.*\.zip' | head -n1)
 stanford_corenlp_package_zip_name="stanford-corenlp-full-2017-06-09.zip"
 [[ ${stanford_corenlp_package_zip_name} =~ (.+)\.zip ]]
@@ -80,13 +80,13 @@ echo "---- NLTK runtests.py ----"
 
 #coverage
 coverage erase
-coverage run --source=coffeehouse_nlpfr coffeehouse_nlpfr/test/runtests.py -v --with-xunit
-coverage xml --omit=coffeehouse_nlpfr/test/*
+coverage run --source=nltk nltk/test/runtests.py -v --with-xunit
+coverage xml --omit=nltk/test/*
 iconv -c -f utf-8 -t utf-8 nosetests.xml > nosetests_scrubbed.xml
 
 # Create a default pylint configuration file.
 touch ~/.pylintrc
-pylint -f parseable coffeehouse_nlpfr > pylintoutput
+pylint -f parseable nltk > pylintoutput
 
 #script always succeeds
 true

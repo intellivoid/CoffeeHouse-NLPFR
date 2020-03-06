@@ -17,7 +17,7 @@ import sys, os
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 
-# build docs using coffeehouse_nlpfr from the upper dir, not the installed version
+# build docs using nltk from the upper dir, not the installed version
 sys.path.insert(0, os.path.abspath('..'))
 
 # -- General configuration -----------------------------------------------------
@@ -91,7 +91,7 @@ exclude_patterns = ['_build', 'api/modules.rst', 'dev/*.rst']
 pygments_style = 'sphinx'
 
 # A list of ignored prefixes for module index sorting.
-modindex_common_prefix = ['coffeehouse_nlpfr.']
+modindex_common_prefix = ['nltk.']
 
 
 # -- Options for HTML output ---------------------------------------------------
@@ -214,7 +214,7 @@ latex_documents = [('index', 'NLTK.tex', 'NLTK Documentation', 'Steven Bird', 'm
 
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
-man_pages = [('index', 'coffeehouse_nlpfr', 'NLTK Documentation', ['Steven Bird'], 1)]
+man_pages = [('index', 'nltk', 'NLTK Documentation', ['Steven Bird'], 1)]
 
 # If true, show URL addresses after external links.
 # man_show_urls = False

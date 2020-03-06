@@ -23,7 +23,7 @@ except LookupError:
 import os
 
 # Use the VERSION file to get NLTK version
-version_file = os.path.join(os.path.dirname(__file__), "coffeehouse_nlpfr", "VERSION")
+version_file = os.path.join(os.path.dirname(__file__), "nltk", "VERSION")
 with open(version_file) as fh:
     nltk_version = fh.read().strip()
 
@@ -47,11 +47,11 @@ extras_require["all"] = set(
 # Adds CLI commands
 console_scripts = """
 [console_scripts]
-coffeehouse_nlpfr=coffeehouse_nlpfr.cli:cli
+nltk=nltk.cli:cli
 """
 
 setup(
-    name="coffeehouse_nlpfr",
+    name="nltk",
     description="Natural Language Toolkit",
     version=nltk_version,
     url="http://nltk.org/",
@@ -98,7 +98,7 @@ natural language processing.  NLTK requires Python 3.5, 3.6, or 3.7.""",
         "Topic :: Text Processing :: Indexing",
         "Topic :: Text Processing :: Linguistic",
     ],
-    package_data={"coffeehouse_nlpfr": ["test/*.doctest", "VERSION"]},
+    package_data={"nltk": ["test/*.doctest", "VERSION"]},
     install_requires=[
         "six",
         'singledispatch; python_version < "3.4"',
