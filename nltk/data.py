@@ -690,7 +690,8 @@ def find(resource_name, paths=None):
     # Display a friendly error message if the resource wasn't found:
     msg = str(
         "Resource \33[93m{resource}\033[0m not found.\n"
-        "Please use the NLTK Downloader to obtain the resource:\n\n"
+        "Install the required CoffeeHouseMod or use the "
+        "NLTK Downloader to obtain the resource:\n\n"
         "\33[31m"  # To display red text in terminal.
         ">>> import nltk\n"
         ">>> nltk.download('{resource}')\n"
