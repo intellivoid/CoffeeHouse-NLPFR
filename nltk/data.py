@@ -96,6 +96,11 @@ try:
     path.append(coffeehousemod_stopwords.get_location())
 except ImportError: pass
 
+try:
+    import coffeehousemod_apt
+    path.append(coffeehousemod_apt.get_location())
+except ImportError: pass
+
 # User-specified locations:
 _paths_from_env = os.environ.get("NLTK_DATA", str("")).split(os.pathsep)
 path += [d for d in _paths_from_env if d]
