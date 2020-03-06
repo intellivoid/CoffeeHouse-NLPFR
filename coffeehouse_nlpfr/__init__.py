@@ -158,7 +158,6 @@ from coffeehouse_nlpfr.stem import *
 from coffeehouse_nlpfr import lazyimport
 
 app = lazyimport.LazyModule("coffeehouse_nlpfr.app", locals(), globals())
-chat = lazyimport.LazyModule("coffeehouse_nlpfr.chat", locals(), globals())
 corpus = lazyimport.LazyModule("coffeehouse_nlpfr.corpus", locals(), globals())
 draw = lazyimport.LazyModule("coffeehouse_nlpfr.draw", locals(), globals())
 toolbox = lazyimport.LazyModule("coffeehouse_nlpfr.toolbox", locals(), globals())
