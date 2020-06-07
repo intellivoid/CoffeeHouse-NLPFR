@@ -11,6 +11,12 @@ Version 3.5
 For documentation, please visit [nltk.org](http://www.nltk.org/).
 
 
+## Installation
+
+```shell script
+python3 setup.py install
+```
+
 ## Copyright
 
 Copyright (C) 2001-2019 NLTK Project
